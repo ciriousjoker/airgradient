@@ -11,7 +11,7 @@ Kits (including a pre-soldered version) are available: https://www.airgradient.c
 
 The codes needs the following libraries installed:
 “WifiManager by tzapu, tablatronix” tested with version 2.0.11-beta
-“U8g2” by oliver tested with version 2.32.15
+“U8g2” by oliver Version 2.34.22 (earlier versions don't support utf8: °₂₅)
 "Sensirion I2C SGP41" by Sensation Version 0.1.0
 "Sensirion Gas Index Algorithm" by Sensation Version 3.2.1
 "Arduino-SHT" by Johannes Winkelmann Version 1.2.2
