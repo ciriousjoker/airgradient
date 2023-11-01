@@ -347,19 +347,23 @@ void updateOLED() {
     String ln1;
 
     if (inUSAQI) {
-      ln1 = "AQI:" + String(PM_TO_AQI_US(pm25)) +  " CO₂:" + String(Co2);
+      ln1 = "AQI:" + String(PM_TO_AQI_US(pm25));
     } else {
-      ln1 = "PM₂₅:" + String(pm25) +  " CO₂:" + String(Co2);
+      ln1 = "PM₂₅:" + String(pm25);
     }
 
-     String ln2 = "TVOC:" + String(TVOC) + " NOX:" + String(NOX);
+     String ln2 = "TVOC:" + String(TVOC);
 
       if (inF) {
-        ln3 = String((temp* 9 / 5) + 32) + "°F   H:" + String(hum)+"%";
+        ln3 = String((temp* 9 / 5) + 32) + "°F";
         } else {
-        ln3 = String(temp, 1) + "°C  H:" + String(hum)+"%";
+        ln3 = String(temp, 1) + "°C";
        }
-     updateOLED2(ln1, ln2, ln3);
+
+     String ln4 = "CO₂:" + String(Co2);
+     String ln5 = "NOX:" + String(NOX);
+     String ln6 = "H:" + String(hum)+"%";
+     updateOLED3(ln1, ln2, ln3, ln4, ln5, ln6);
    }
 }
 
@@ -372,6 +376,22 @@ void updateOLED2(String ln1, String ln2, String ln3) {
   u8g2.drawUTF8(1, 10, String(ln1).c_str());
   u8g2.drawUTF8(1, 30, String(ln2).c_str());
   u8g2.drawUTF8(1, 50, String(ln3).c_str());
+    } while ( u8g2.nextPage() );
+}
+
+void updateOLED3(String ln1, String ln2, String ln3, String ln4, String ln5, String ln6) {
+  char buf[9];
+  u8g2.firstPage();
+  u8g2.firstPage();
+  do {
+    u8g2_uint_t offset = 72;
+  u8g2.setFont(u8g2_font_t0_16_te);
+  u8g2.drawUTF8(0, 10, String(ln1).c_str());
+  u8g2.drawUTF8(0, 30, String(ln2).c_str());
+  u8g2.drawUTF8(0, 50, String(ln3).c_str());
+  u8g2.drawUTF8(offset, 10, String(ln4).c_str());
+  u8g2.drawUTF8(offset, 30, String(ln5).c_str());
+  u8g2.drawUTF8(offset + 16, 50, String(ln6).c_str());
     } while ( u8g2.nextPage() );
 }
 
