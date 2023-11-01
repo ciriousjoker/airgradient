@@ -355,9 +355,9 @@ void updateOLED() {
      String ln2 = "TVOC:" + String(TVOC) + " NOX:" + String(NOX);
 
       if (inF) {
-        ln3 = "F:" + String((temp* 9 / 5) + 32) + " H:" + String(hum)+"%";
+        ln3 = String((temp* 9 / 5) + 32) + "°F   H:" + String(hum)+"%";
         } else {
-        ln3 = "C:" + String(temp) + " H:" + String(hum)+"%";
+        ln3 = String(temp) + "°C  H:" + String(hum)+"%";
        }
      updateOLED2(ln1, ln2, ln3);
    }
