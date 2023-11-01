@@ -349,7 +349,7 @@ void updateOLED() {
     if (inUSAQI) {
       ln1 = "AQI:" + String(PM_TO_AQI_US(pm25)) +  " CO₂:" + String(Co2);
     } else {
-      ln1 = "PM:" + String(pm25) +  " CO₂:" + String(Co2);
+      ln1 = "PM₂₅:" + String(pm25) +  " CO₂:" + String(Co2);
     }
 
      String ln2 = "TVOC:" + String(TVOC) + " NOX:" + String(NOX);
