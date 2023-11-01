@@ -361,7 +361,7 @@ void updateOLED() {
        }
 
      String ln4 = "CO₂:" + String(Co2);
-     String ln5 = "NOX:" + String(NOX);
+     String ln5 = "NOx:" + String(NOX);
      String ln6 = "H:" + String(hum)+"%";
      updateOLED3(ln1, ln2, ln3, ln4, ln5, ln6);
    }
