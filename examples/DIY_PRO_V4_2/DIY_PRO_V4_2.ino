@@ -84,7 +84,7 @@ boolean displayTop = true;
 boolean connectWIFI=true;
 
 // set to true if you want low brightness. This reduces the contrast to the minimum, but it's still very readable even in daylight.
-boolean lowBrightness=false;
+boolean lowBrightness=true;
 // CONFIGURATION END
 
 
