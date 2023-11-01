@@ -83,6 +83,8 @@ boolean displayTop = true;
 // set to true if you want to connect to wifi. You have 60 seconds to connect. Then it will go into an offline mode.
 boolean connectWIFI=true;
 
+// set to true if you want low brightness. This reduces the contrast to the minimum, but it's still very readable even in daylight.
+boolean lowBrightness=false;
 // CONFIGURATION END
 
 
@@ -128,6 +130,10 @@ void setup() {
   sht.init();
   sht.setAccuracy(SHTSensor::SHT_ACCURACY_MEDIUM);
   //u8g2.setDisplayRotation(U8G2_R0);
+
+  // A value of 1 on a scale from 0->255 seems terrible, but it works perfectly.
+  // This might break on non-official displays.
+  if(lowBrightness) u8g2.setContrast(1);
 
   EEPROM.begin(512);
   delay(500);
