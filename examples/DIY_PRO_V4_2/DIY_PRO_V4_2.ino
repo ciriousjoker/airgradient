@@ -368,10 +368,10 @@ void updateOLED2(String ln1, String ln2, String ln3) {
   u8g2.firstPage();
   u8g2.firstPage();
   do {
-  u8g2.setFont(u8g2_font_t0_16_tf);
-  u8g2.drawStr(1, 10, String(ln1).c_str());
-  u8g2.drawStr(1, 30, String(ln2).c_str());
-  u8g2.drawStr(1, 50, String(ln3).c_str());
+  u8g2.setFont(u8g2_font_t0_16_te);
+  u8g2.drawUTF8(1, 10, String(ln1).c_str());
+  u8g2.drawUTF8(1, 30, String(ln2).c_str());
+  u8g2.drawUTF8(1, 50, String(ln3).c_str());
     } while ( u8g2.nextPage() );
 }
 
