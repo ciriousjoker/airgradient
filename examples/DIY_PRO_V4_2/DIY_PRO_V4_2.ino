@@ -352,7 +352,7 @@ void updateOLED() {
       ln1 = "PM₂₅:" + String(pm25);
     }
 
-     String ln2 = "TVOC:" + String(TVOC);
+     String ln2 = "NOx:" + String(NOX);
 
       if (inF) {
         ln3 = String((temp* 9 / 5) + 32) + "°F";
@@ -361,7 +361,7 @@ void updateOLED() {
        }
 
      String ln4 = "CO₂:" + String(Co2);
-     String ln5 = "NOx:" + String(NOX);
+     String ln5 = "TVOC:" + String(TVOC);
      String ln6 = "H:" + String(hum)+"%";
      updateOLED3(ln1, ln2, ln3, ln4, ln5, ln6);
    }
@@ -384,14 +384,14 @@ void updateOLED3(String ln1, String ln2, String ln3, String ln4, String ln5, Str
   u8g2.firstPage();
   u8g2.firstPage();
   do {
-    u8g2_uint_t offset = 72;
+    u8g2_uint_t offset = 56;
   u8g2.setFont(u8g2_font_t0_16_te);
   u8g2.drawUTF8(0, 10, String(ln1).c_str());
   u8g2.drawUTF8(0, 30, String(ln2).c_str());
   u8g2.drawUTF8(0, 50, String(ln3).c_str());
-  u8g2.drawUTF8(offset, 10, String(ln4).c_str());
+  u8g2.drawUTF8(offset + 8, 10, String(ln4).c_str());
   u8g2.drawUTF8(offset, 30, String(ln5).c_str());
-  u8g2.drawUTF8(offset + 16, 50, String(ln6).c_str());
+  u8g2.drawUTF8(offset + 24, 50, String(ln6).c_str());
     } while ( u8g2.nextPage() );
 }
 
